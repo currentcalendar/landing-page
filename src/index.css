@@ -8,7 +8,9 @@
 
 body {
   margin: 0;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #FEFBF6;
+  background-color: #efeae2;
 }

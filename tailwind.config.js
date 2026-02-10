@@ -6,15 +6,18 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        sans:['Jost', 'ui-sans-serif', 'system-ui'],
+      },
+      fontweight:{
+        medium:'500',
+      },
       colors:{
         current:{
           dark: '#11423F',
-          cream: '#FEFBF6',
+          cream: '#efeae2',
           salmon: '#E88D87'
         }
-      },
-      fontFamily:{
-        sans: ['Inter', 'system-ui', 'sans-serif'],
       }
     },
   },
