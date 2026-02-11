@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './App.css';
+
+emailjs.init('YOUR_PUBLIC_KEY_HERE');
 
 const navSections = [
   { label: 'Inicio', id: 'home' },
@@ -124,8 +127,9 @@ function scrollToSection(id: string) {
 }
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
@@ -157,14 +161,38 @@ function App() {
     };
   }, []);
 
-  const handleJoinWaitlist = (e: React.FormEvent) => {
+  const handleJoinWaitlist = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (!email || email.trim() === '') {
-      alert('⚠️ Por favor, escribe tu email.');
+      setMessage({ type: 'error', text: '⚠️ Por favor, escribe tu email.' });
       return;
     }
-    alert(`¡Genial! Hemos apuntado ${email} a la lista de espera 🦦`);
-    setEmail('');
+
+    setIsLoading(true);
+    setMessage(null);
+
+    try {
+      await emailjs.send(
+        'YOUR_SERVICE_ID_HERE',
+        'YOUR_TEMPLATE_ID_HERE',
+        {
+          to_email: 'YOUR_EMAIL_HERE',
+          user_email: email,
+          date: new Date().toLocaleDateString('es-ES'),
+        }
+      );
+
+      setMessage({ type: 'success', text: `¡Genial! Hemos apuntado ${email} a la lista de espera 🦦` });
+      setEmail('');
+      
+      setTimeout(() => setMessage(null), 5000);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setMessage({ type: 'error', text: 'Error al enviar. Intenta más tarde.' });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -256,12 +284,28 @@ function App() {
               placeholder="tu@email.com" 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-6 py-4 rounded-xl text-[#000000] bg-[#efeae2] outline-none focus:ring-4 ring-[#E88D87]"
+              disabled={isLoading}
+              className="flex-1 px-6 py-4 rounded-xl text-[#000000] bg-[#efeae2] outline-none focus:ring-4 ring-[#E88D87] disabled:opacity-60"
             />
-            <button type="submit" className="bg-[#E88D87] text-white font-bold px-8 py-4 rounded-xl hover:brightness-110 transition shadow-lg">
-              Enviar
+            <button 
+              type="submit" 
+              disabled={isLoading}
+              className="bg-[#E88D87] text-white font-bold px-8 py-4 rounded-xl hover:brightness-110 transition shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {isLoading ? 'Enviando...' : 'Enviar'}
             </button>
           </form>
+
+          {/* Success/Error Message */}
+          {message && (
+            <div className={`max-w-md mx-auto p-4 rounded-lg font-semibold transition-all ${
+              message.type === 'success' 
+                ? 'bg-green-500/20 text-green-200 border border-green-500/50' 
+                : 'bg-red-500/20 text-red-200 border border-red-500/50'
+            }`}>
+              {message.text}
+            </div>
+          )}
         </div>
       </section>
 
@@ -273,4 +317,3 @@ function App() {
 }
 
 export default App;
-
