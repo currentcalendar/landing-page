@@ -5,7 +5,21 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        sans:['Jost', 'ui-sans-serif', 'system-ui'],
+      },
+      fontweight:{
+        medium:'500',
+      },
+      colors:{
+        current:{
+          dark: '#11423F',
+          cream: '#efeae2',
+          salmon: '#E88D87'
+        }
+      }
+    },
   },
   plugins: [],
 }
