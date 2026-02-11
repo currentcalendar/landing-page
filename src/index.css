@@ -12,9 +12,6 @@ body {
   font-weight: 500;
   min-width: 320px;
   min-height: 100vh;
-<<<<<<< Updated upstream
-  background-color: #efeae2;
-=======
   overflow-x: hidden;
 }
 
@@ -36,5 +33,4 @@ h1 {
     color: #747bff;
   }
   
->>>>>>> Stashed changes
 }
