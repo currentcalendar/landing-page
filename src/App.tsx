@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { Calendar, MapPin, Star, Link2, UsersRound, Palette, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
+import { siTiktok } from 'simple-icons/icons';
+
 import './App.css';
 
 emailjs.init('YOUR_PUBLIC_KEY_HERE');
@@ -11,58 +14,17 @@ const navSections = [
 ];
 
 const stackingCards = [
-{
-  content: (
-<section id="home" className="pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20">
-
-        {}
-        <div className="md:w-1/2 text-left space-y-6 animate-fade-in-up">
-          <span className="inline-block bg-[#E88D87] text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider shadow-sm">
-            Coming Soon 2026
-          </span>
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1]">
-            Go with <br/> the flow.
-          </h1>
-          <p className="text-xl text-white max-w-lg leading-relaxed">
-            La red social para descubrir eventos y compartir calendarios. 
-            Más social que Google Calendar, más organizado que Instagram.
-          </p>
-
-          <div className="pt-4">
-             <button 
-               onClick={() => scrollToSection('waitlist')}
-               className="bg-[#E88D87] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:scale-105 transition transform"
-             >
-               Unirme a la Beta
-             </button>
-          </div>
-        </div>
-
-        {}
-        <div className="md:w-1/2 flex justify-center relative">
-           {}
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-[#E88D87]/20 rounded-full blur-3xl -z-10"></div>
-
-           <img 
-             src="src/assets/mockup-feed.png" 
-             alt="Current App Feed" 
-             className="w-72 md:w-80 rounded-[2rem] shadow-2xl border-4 border-[#efeae2] rotate-[-2deg] hover:rotate-0 transition duration-500"
-           />
-        </div>
-      </section>
-  ),
-},
   {
-  content: (
-    <>
-      <h2 id="features" className="text-3xl md:text-4xl font-bold text-white mb-16 text-center">
+    content: (
+      <>
+        <h2 id="features" className="text-3xl md:text-4xl font-bold text-white mb-16 text-center">
         Todo en un solo lugar
       </h2>
 
       <div className="flex flex-col md:flex-row gap-8 w-full justify-center">
-       <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-left border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
-          <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">
-            📅
+        <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+          <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition mx-auto">
+            <Calendar className="w-7 h-7 text-[#efeae2]" />
           </div>
           <h3 className="text-xl font-bold text-[#11423F] mb-3">Calendarios Sociales</h3>
           <p className="text-gray-600 leading-relaxed">
@@ -70,9 +32,9 @@ const stackingCards = [
           </p>
         </div>
 
-        <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-left border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
-          <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">
-            📍
+        <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+          <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition mx-auto">
+            <MapPin className="w-7 h-7 text-[#efeae2]" />
           </div>
           <h3 className="text-xl font-bold text-[#11423F] mb-3">Radar Discovery</h3>
           <p className="text-gray-600 leading-relaxed">
@@ -80,9 +42,9 @@ const stackingCards = [
           </p>
         </div>
 
-        <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-left border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
-          <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition">
-            ⭐
+        <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+          <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition mx-auto">
+            <Star className="w-7 h-7 text-[#efeae2]" />
           </div>
           <h3 className="text-xl font-bold text-[#11423F] mb-3">Reward System</h3>
           <p className="text-gray-600 leading-relaxed">
@@ -93,24 +55,75 @@ const stackingCards = [
     </>
   ),
 },
+{
+    content: (
+      <>
+        <h2 id="features" className="text-3xl md:text-4xl font-bold text-white mb-16 text-center">
+        ¿Por qué elegir Current Calendar?
+      </h2>
+
+      <div className="flex flex-col md:flex-row gap-8 w-full justify-center">
+       <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+          <h3 className="text-xl font-bold text-[#11423F] mb-3">Interfaz moderna y fácil de usar</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Nuestra interfaz intuitiva te permite navegar con facilidad y encontrar eventos de forma rápida y eficiente.
+          </p>
+        </div>
+
+        <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+          <h3 className="text-xl font-bold text-[#11423F] mb-3">Privacidad y seguridad de tus datos</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Tus datos están protegidos con las más altas normas de seguridad. No compartimos información personal sin tu consentimiento.
+          </p>
+        </div>
+
+        <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+          <h3 className="text-xl font-bold text-[#11423F] mb-3">Soporte y actualizaciones constantes</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Atento a nuestras redes sociales para recibir las últimas actualizaciones y noticias sobre Current Calendar.
+          </p>
+        </div>
+      </div>
+    </>
+  ),
+},
 
   {
     content: (
       <>
-        <h2 className="text-2xl font-semibold mb-4 text-center">¿Por qué elegir Current Calendar?</h2>
-        <ul className="list-disc list-inside max-w-2xl text-left text-lg text-gray-100 mx-auto">
-          <li>Interfaz moderna y fácil de usar</li>
-          <li>Privacidad y seguridad de tus datos</li>
-          <li>Soporte y actualizaciones constantes</li>
-        </ul>
-      </>
-    ),
-  },
-  {
-    content: (
-      <>
-        <h2 className="text-2xl font-semibold mb-4 text-center">Integraciones y personalización</h2>
-        <p className="max-w-xl text-lg text-gray-100 mb-4 mx-auto text-center">Conecta Current Calendar con tus aplicaciones favoritas como Google Calendar, Outlook y más. Personaliza la apariencia, elige temas, colores y ajusta las notificaciones a tu gusto.</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-16 text-center">Integraciones y Personalización</h2>
+        
+        <div className="flex flex-col md:flex-row gap-8 w-full justify-center">
+          <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+            <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition mx-auto">
+              <Link2 className="w-7 h-7 text-[#efeae2]" />
+            </div>
+            <h3 className="text-xl font-bold text-[#11423F] mb-3">Google Calendar</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Sincroniza automáticamente tus eventos de Google Calendar.
+            </p>
+          </div>
+
+          <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+            <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition mx-auto">
+              <UsersRound className="w-7 h-7 text-[#efeae2]" />
+            </div>
+            <h3 className="text-xl font-bold text-[#11423F] mb-3">Encuentra tu nicho</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Explora los diferentes calendarios disponibles y encuentra el adecuado para ti.
+            </p>
+          </div>
+
+          <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+            <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition mx-auto">
+              <Palette className="w-7 h-7 text-[#efeae2]" />
+            </div>
+            <h3 className="text-xl font-bold text-[#11423F] mb-3">Temas y Colores</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Personaliza la apariencia con temas y colores a tu gusto.
+            </p>
+          </div>
+        </div>
       </>
     ),
   },
@@ -224,15 +237,68 @@ function App() {
               </button>
             ))}
             <button className="bg-[#E88D87] text-white px-5 py-2 rounded-full font-bold hover:bg-white hover:text-[#E88D87] transition shadow-md">
-              Descargar App
+              Coming Soon
             </button>
           </div>
   </nav>
 
+  {/* Home Section */}
+  <section id="home" className="min-h-screen flex items-center justify-center py-20 px-6 bg-[#efeae2]" style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)', marginRight: 'calc(50% - 50vw)' }}>
+    <div className="max-w-7xl mx-auto w-full">
+      <div className="grid md:grid-cols-2 items-center gap-16 md:gap-20">
+        
+        <div className="card rounded-3xl shadow-2xl p-10 order-2 md:order-1" style={{ background: '#11423F', color: '#efeae2', maxWidth: '600px' }}>
+          <div className="text-left space-y-8 animate-fade-in-up">
+            <div className="space-y-2">
+              <span className="inline-flex items-center gap-2 bg-gradient-to-r from-[#E88D87] to-[#E07870] text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-widest shadow-lg border border-[#E88D87]/30">
+                <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                Coming Soon 2026
+              </span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-[#efeae2] leading-[1.1] tracking-tight">
+              Go with <span className="bg-gradient-to-r from-[#E88D87] to-[#E07870] bg-clip-text text-transparent">the flow.</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-gray-200 max-w-md leading-relaxed font-light">
+              La red social para descubrir eventos y compartir calendarios. 
+              Más social que Google Calendar, más organizado que Instagram.
+            </p>
+            
+            <div className="pt-6 flex flex-col sm:flex-row gap-4">
+               <button 
+                 onClick={() => scrollToSection('waitlist')}
+                 className="bg-gradient-to-r from-[#E88D87] to-[#E07870] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 transform"
+               >
+                 Unirme a la Beta
+               </button>
+               <button className="border-2 border-[#efeae2] text-[#efeae2] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#efeae2] hover:text-[#11423F] transition-all duration-300">
+                 Saber Más
+               </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center relative order-1 md:order-2">
+           <div className="absolute inset-0 bg-gradient-to-br from-[#E88D87]/20 via-transparent to-[#E88D87]/10 rounded-full blur-3xl -z-10"></div>
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-[#E88D87]/15 to-[#E07870]/10 rounded-full blur-3xl -z-10"></div>
+           
+           <div className="relative group">
+             <div className="absolute inset-0 bg-gradient-to-r from-[#E88D87]/20 to-[#E07870]/20 rounded-[3rem] blur-2xl group-hover:blur-3xl transition duration-500 -z-10"></div>
+             <img 
+               src="src/assets/mockup-feed.png" 
+               alt="Current App Feed" 
+               className="w-200 md:w-200 rounded-[2.5rem] shadow-2xl border-4 border-[#efeae2] group-hover:border-[#E88D87]/50 group-hover:shadow-2xl group-hover:scale-105 transition-all duration-500"
+             />
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   {/* Stacking Cards Section */}
   <section
-    id="home"
-    className="flex flex-col items-center justify-center min-h-[100vh] -mt-8 bg-[#efeae2]"
+    className="flex flex-col items-center justify-center bg-[#efeae2]"
     style={{
       width: '100vw',
       marginLeft: 'calc(50% - 50vw)',
@@ -310,7 +376,28 @@ function App() {
       </section>
 
       <footer className="py-8 text-center text-sm text-[#11423F]/60 bg-[#efeae2]" style={{ position: 'relative', zIndex: 0, width: '100vw', marginLeft: 'calc(50% - 50vw)', marginRight: 'calc(50% - 50vw)' }}>
-        <p>© 2026 Current App. Group F Project.</p>
+                <div className="max-w-7xl mx-auto">
+          <div className="flex justify-center gap-6 mb-6">
+            <a href="https://www.instagram.com/current.calendar" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md">
+              <Instagram className="w-5 h-5 text-[#efeae2]" />
+            </a>
+            <a href="https://x.com/currentcalendar" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md">
+              <Twitter className="w-5 h-5 text-[#efeae2]" />
+            </a>
+            <a href="https://www.linkedin.com/company/currentcalendar/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md">
+              <Linkedin className="w-5 h-5 text-[#efeae2]" />
+            </a>
+             <a href="https://www.tiktok.com/@current.calendar" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d={siTiktok.path} className="w-5 h-5 text-[#efeae2]" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@currentcalendar" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md">
+              <Youtube className="w-5 h-5 text-[#efeae2]" />
+            </a>
+          </div>
+          <p>© 2026 Current App</p>
+        </div>
       </footer>
 </>
   );
