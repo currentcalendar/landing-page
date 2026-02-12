@@ -63,21 +63,21 @@ const stackingCards = [
       </h2>
 
       <div className="flex flex-col md:flex-row gap-8 w-full justify-center">
-       <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+       <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
           <h3 className="text-xl font-bold text-[#11423F] mb-3">Interfaz moderna y fácil de usar</h3>
           <p className="text-gray-600 leading-relaxed">
             Nuestra interfaz intuitiva te permite navegar con facilidad y encontrar eventos de forma rápida y eficiente.
           </p>
         </div>
 
-        <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+        <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
           <h3 className="text-xl font-bold text-[#11423F] mb-3">Privacidad y seguridad de tus datos</h3>
           <p className="text-gray-600 leading-relaxed">
             Tus datos están protegidos con las más altas normas de seguridad. No compartimos información personal sin tu consentimiento.
           </p>
         </div>
 
-        <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+        <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
           <h3 className="text-xl font-bold text-[#11423F] mb-3">Soporte y actualizaciones constantes</h3>
           <p className="text-gray-600 leading-relaxed">
             Atento a nuestras redes sociales para recibir las últimas actualizaciones y noticias sobre Current Calendar.
@@ -220,7 +220,7 @@ function App() {
       </nav>
 
       {}
-      <section id="home" className="pt-40 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20">
+      <section id="home" className="pt-40 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20 bg-[#fdf7ed] rounded-3xl shadow-xl relative overflow-hidden z-10">
         <div className="md:w-1/2 text-left space-y-6">
           <span className="inline-block bg-[#E88D87] text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider shadow-sm">
             Coming Soon 2026
