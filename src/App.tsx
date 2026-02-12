@@ -15,6 +15,8 @@ import { siTiktok } from 'simple-icons/icons';
 
 import './App.css';
 
+emailjs.init('YOUR_PUBLIC_KEY_HERE');
+
 const navSections = [
   { label: 'Inicio', id: 'home' },
   { label: 'Características', id: 'features' },
