@@ -158,24 +158,38 @@ function App() {
     return () => window.removeEventListener('scroll', updateCardVisibility);
   }, []);
 
- const handleJoinWaitlist = (e: React.FormEvent) => {
+  const handleJoinWaitlist = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (!email || email.trim() === '') {
-      alert('⚠️ Por favor, escribe tu email.');
+      setMessage({ type: 'error', text: '⚠️ Por favor, escribe tu email.' });
       return;
     }
 
     setIsLoading(true);
+    setMessage(null);
 
-    
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      await emailjs.send(
+        'YOUR_SERVICE_ID_HERE',
+        'YOUR_TEMPLATE_ID_HERE',
+        {
+          to_email: 'YOUR_EMAIL_HERE',
+          user_email: email,
+          date: new Date().toLocaleDateString('es-ES'),
+        }
+      );
+
       setMessage({ type: 'success', text: `¡Genial! Hemos apuntado ${email} a la lista de espera 🦦` });
       setEmail('');
       
-    
       setTimeout(() => setMessage(null), 5000);
-    }, 1000);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setMessage({ type: 'error', text: 'Error al enviar. Intenta más tarde.' });
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
     <div className="min-h-screen bg-[#FEFBF6] text-[#11423F] w-full overflow-x-hidden font-sans">
