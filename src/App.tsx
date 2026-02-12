@@ -18,7 +18,7 @@ import logo from "./assets/logo-current.png";
 
 import "./App.css";
 
-emailjs.init("YOUR_PUBLIC_KEY_HERE");
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 const navSections = [
   { label: "Inicio", id: "home" },
