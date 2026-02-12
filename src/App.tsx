@@ -280,17 +280,29 @@ function App() {
       </section>
 
       {}
-      <footer className="py-16 text-center bg-[#FEFBF6]">
-        <div className="flex justify-center gap-8 mb-8">
-          <Instagram className="w-6 h-6 text-[#11423F] hover:text-[#E88D87] cursor-pointer" />
-          <Twitter className="w-6 h-6 text-[#11423F] hover:text-[#E88D87] cursor-pointer" />
-          <Linkedin className="w-6 h-6 text-[#11423F] hover:text-[#E88D87] cursor-pointer" />
-          <Youtube className="w-6 h-6 text-[#11423F] hover:text-[#E88D87] cursor-pointer" />
-          <svg className="w-6 h-6 fill-current text-[#11423F] hover:text-[#E88D87] cursor-pointer" viewBox="0 0 24 24">
-            <path d={siTiktok.path} />
-          </svg>
+      <footer className="py-8 text-center text-sm text-[#11423F]/60 bg-[#efeae2]" style={{ position: 'relative', zIndex: 0, width: '100vw', marginLeft: 'calc(50% - 50vw)', marginRight: 'calc(50% - 50vw)' }}>
+                <div className="max-w-7xl mx-auto">
+          <div className="flex justify-center gap-6 mb-6">
+            <a href="https://www.instagram.com/current.calendar" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md">
+              <Instagram className="w-5 h-5 text-[#efeae2]" />
+            </a>
+            <a href="https://x.com/currentcalendar" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md">
+              <Twitter className="w-5 h-5 text-[#efeae2]" />
+            </a>
+            <a href="https://www.linkedin.com/company/currentcalendar/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md">
+              <Linkedin className="w-5 h-5 text-[#efeae2]" />
+            </a>
+             <a href="https://www.tiktok.com/@current.calendar" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d={siTiktok.path} className="w-5 h-5 text-[#efeae2]" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@currentcalendar" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md">
+              <Youtube className="w-5 h-5 text-[#efeae2]" />
+            </a>
+          </div>
+          <p>© 2026 Current App</p>
         </div>
-        <p className="text-[#11423F]/40 font-medium">© 2026 Current App · Sevilla, España</p>
       </footer>
     </div>
   );
