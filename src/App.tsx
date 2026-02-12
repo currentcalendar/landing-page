@@ -13,8 +13,8 @@ import {
   Youtube,
 } from "lucide-react";
 import { siTiktok } from "simple-icons/icons";
-import mockup from "src/assets/mockup-feed.png";
-import logo from "src/assets/logo-current.png";
+import mockup from "./assets/mockup-feed.png";
+import logo from "./assets/logo-current.png";
 
 import "./App.css";
 
