@@ -276,6 +276,11 @@ function App() {
             </button>
           </form>
           {message && <div className={`p-4 rounded-xl font-bold ${message.type === 'success' ? 'bg-green-500/20 text-green-200' : 'bg-red-500/20 text-red-200'}`}>{message.text}</div>}
+          <div className="mt-6">
+            <a href="https://forms.cloud.microsoft/r/UErS0DvUBR" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#E88D87] text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:bg-[#D97D7D] hover:scale-105 transition-all duration-300">
+              ¿Tienes alguna sugerencia? Pulsa aquí
+            </a>
+          </div>
         </div>
       </section>
 
