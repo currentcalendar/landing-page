@@ -210,9 +210,13 @@ function App() {
     setIsLoading(true);
     setMessage(null);
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const adminEmail = import.meta.env.VITE_EMAILJS_ADMIN_EMAIL;
+
     try {
-      await emailjs.send("YOUR_SERVICE_ID_HERE", "YOUR_TEMPLATE_ID_HERE", {
-        to_email: "YOUR_EMAIL_HERE",
+      await emailjs.send(serviceId, templateId, {
+        to_email: adminEmail,
         user_email: email,
         date: new Date().toLocaleDateString("es-ES"),
       });
