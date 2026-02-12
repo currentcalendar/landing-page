@@ -55,6 +55,38 @@ const stackingCards = [
   {
     content: (
       <>
+        <h2 id="features" className="text-3xl md:text-4xl font-bold text-white mb-16 text-center">
+        ¿Por qué elegir Current Calendar?
+      </h2>
+
+      <div className="flex flex-col md:flex-row gap-8 w-full justify-center">
+       <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+          <h3 className="text-xl font-bold text-[#11423F] mb-3">Interfaz moderna y fácil de usar</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Nuestra interfaz intuitiva te permite navegar con facilidad y encontrar eventos de forma rápida y eficiente.
+          </p>
+        </div>
+
+        <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+          <h3 className="text-xl font-bold text-[#11423F] mb-3">Privacidad y seguridad de tus datos</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Tus datos están protegidos con las más altas normas de seguridad. No compartimos información personal sin tu consentimiento.
+          </p>
+        </div>
+
+        <div className="p-8 bg-[#efeae2] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
+          <h3 className="text-xl font-bold text-[#11423F] mb-3">Soporte y actualizaciones constantes</h3>
+          <p className="text-gray-600 leading-relaxed">
+            Atento a nuestras redes sociales para recibir las últimas actualizaciones y noticias sobre Current Calendar.
+          </p>
+        </div>
+      </div>
+    </>
+  ),
+},
+  {
+    content: (
+      <>
         <h2 className="text-3xl md:text-4xl font-bold text-[#FEFBF6] mb-12 text-center">Integraciones y Personalización</h2>
         <div className="flex flex-col md:flex-row gap-6 w-full justify-center">
           <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
