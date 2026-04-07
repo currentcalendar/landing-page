@@ -4,159 +4,34 @@ import {
   Calendar,
   MapPin,
   Star,
-  Link2,
-  UsersRound,
-  Palette,
+  Users,
+  Radar,
+  CheckCircle2,
+  X,
+  ChevronDown,
   Instagram,
   Twitter,
   Linkedin,
   Youtube,
+  BadgeCheck,
+  BarChart3,
+  MessageCircle,
+  Megaphone,
+  Lock,
+  Globe,
+  Heart,
+  Zap,
+  Menu,
 } from "lucide-react";
 import { siTiktok } from "simple-icons/icons";
-import mockup from "./assets/mockup-feed.png";
 import logo from "./assets/logo-current.png";
+import mockupFeed from "./assets/mockup-feed.png";
+import mockupCalendar from "./assets/mockup-calendar.png";
+import mockupMap from "./assets/mockup-map.png";
 
 import "./App.css";
 
 emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
-
-const navSections = [
-  { label: "Inicio", id: "home" },
-  { label: "Características", id: "features" },
-  { label: "Waitlist", id: "waitlist" },
-];
-
-const stackingCards = [
-  {
-    content: (
-      <>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#FEFBF6] mb-12 text-center">
-          Todo en un solo lugar
-        </h2>
-        <div className="flex flex-col md:flex-row gap-6 w-full justify-center">
-          <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
-            <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition mx-auto">
-              <Calendar className="w-7 h-7 text-[#FEFBF6]" />
-            </div>
-            <h3 className="text-xl font-bold text-[#11423F] mb-3">
-              Calendarios Sociales
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Sigue los calendarios públicos de tus amigos, equipos o artistas
-              favoritos.
-            </p>
-          </div>
-          <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
-            <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition mx-auto">
-              <MapPin className="w-7 h-7 text-[#FEFBF6]" />
-            </div>
-            <h3 className="text-xl font-bold text-[#11423F] mb-3">
-              Radar Discovery
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              ¿Sin planes? Abre el mapa y descubre eventos cerca de ti.
-            </p>
-          </div>
-          <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
-            <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition mx-auto">
-              <Star className="w-7 h-7 text-[#FEFBF6]" />
-            </div>
-            <h3 className="text-xl font-bold text-[#11423F] mb-3">
-              Reward System
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Gana popularidad creando los mejores eventos de tu zona.
-            </p>
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    content: (
-      <>
-        <h2
-          id="features"
-          className="text-3xl md:text-4xl font-bold text-white mb-16 text-center"
-        >
-          ¿Por qué elegir Current Calendar?
-        </h2>
-
-        <div className="flex flex-col md:flex-row gap-8 w-full justify-center">
-          <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
-            <h3 className="text-xl font-bold text-[#11423F] mb-3">
-              Interfaz moderna y fácil de usar
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Nuestra interfaz intuitiva te permite navegar con facilidad y
-              encontrar eventos de forma rápida y eficiente.
-            </p>
-          </div>
-
-          <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
-            <h3 className="text-xl font-bold text-[#11423F] mb-3">
-              Privacidad y seguridad de tus datos
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Tus datos están protegidos con las más altas normas de seguridad.
-              No compartimos información personal sin tu consentimiento.
-            </p>
-          </div>
-
-          <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
-            <h3 className="text-xl font-bold text-[#11423F] mb-3">
-              Soporte y actualizaciones constantes
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Atento a nuestras redes sociales para recibir las últimas
-              actualizaciones y noticias sobre Current Calendar.
-            </p>
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    content: (
-      <>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#FEFBF6] mb-12 text-center">
-          Integraciones y Personalización
-        </h2>
-        <div className="flex flex-col md:flex-row gap-6 w-full justify-center">
-          <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
-            <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition mx-auto">
-              <Link2 className="w-7 h-7 text-[#FEFBF6]" />
-            </div>
-            <h3 className="text-xl font-bold text-[#11423F] mb-3">
-              Google Calendar
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Sincroniza tus eventos automáticamente.
-            </p>
-          </div>
-          <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
-            <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition mx-auto">
-              <UsersRound className="w-7 h-7 text-[#FEFBF6]" />
-            </div>
-            <h3 className="text-xl font-bold text-[#11423F] mb-3">Comunidad</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Encuentra el nicho adecuado para tus planes.
-            </p>
-          </div>
-          <div className="p-8 bg-[#FEFBF6] rounded-3xl shadow-xl text-center border border-transparent hover:border-[#E88D87]/30 transition group max-w-sm">
-            <div className="w-14 h-14 bg-[#11423F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition mx-auto">
-              <Palette className="w-7 h-7 text-[#FEFBF6]" />
-            </div>
-            <h3 className="text-xl font-bold text-[#11423F] mb-3">Temas</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Personaliza la apariencia a tu gusto.
-            </p>
-          </div>
-        </div>
-      </>
-    ),
-  },
-];
 
 function scrollToSection(id: string) {
   const el = document.getElementById(id);
@@ -168,270 +43,467 @@ function scrollToSection(id: string) {
   }
 }
 
+const navSections = [
+  { label: "Inicio", id: "home" },
+  { label: "Características", id: "features" },
+  { label: "Planes", id: "pricing" },
+  { label: "Waitlist", id: "waitlist" },
+];
+
+const plans = [
+  {
+    name: "Free",
+    price: { monthly: 0, yearly: 0 },
+    description: "Para empezar a fluir con tu comunidad",
+    color: "free",
+    features: [
+      { text: "Interacciones ilimitadas", included: true },
+      { text: "Hasta 10 calendarios favoritos", included: true },
+      { text: "2 suscripciones a calendarios públicos", included: true },
+      { text: "2 suscripciones a calendarios privados", included: true },
+      { text: "Radar del día actual", included: true },
+      { text: "Personalización de perfil básica", included: false },
+      { text: "Radar completo de eventos", included: false },
+      { text: "Calendarios ilimitados", included: false },
+      { text: "Badge de verificación", included: false },
+    ],
+    cta: "Empezar gratis",
+    popular: false,
+  },
+  {
+    name: "Standard",
+    price: { monthly: 4.99, yearly: 45.99 },
+    description: "Para creators y usuarios que quieren el control total",
+    color: "standard",
+    features: [
+      { text: "Todo lo de Free", included: true },
+      { text: "Suscripciones ilimitadas", included: true },
+      { text: "Creación de calendarios ilimitada", included: true },
+      { text: "Badge de verificación", included: true },
+      { text: "Personalización del calendario (imagen, etc.)", included: true },
+      { text: "Full media en eventos", included: true },
+      { text: "Radar completo de eventos", included: true },
+      { text: "Analíticas de calendarios", included: false },
+      { text: "Promocionar en buscador", included: false },
+    ],
+    cta: "Unirse al Standard",
+    popular: true,
+  },
+  {
+    name: "Business",
+    price: { monthly: 9.99, yearly: 109.99 },
+    description: "Para organizaciones, eventos y creadores profesionales",
+    color: "business",
+    features: [
+      { text: "Todo lo de Standard", included: true },
+      { text: "Analíticas avanzadas de calendarios", included: true },
+      { text: "Promocionar en el buscador", included: true },
+      { text: "Chat para asistentes al evento", included: true },
+      { text: "Badge Business / Creator", included: true },
+      { text: "Badge de verificación", included: true },
+      { text: "Prioridad en soporte", included: true },
+      { text: "Acceso anticipado a nuevas funciones", included: true },
+    ],
+    cta: "Empezar con Business",
+    popular: false,
+  },
+];
+
+const features = [
+  { icon: Calendar, title: "Tu calendario, tu mundo", description: "Gestiona tus eventos personales y mantén todo organizado en un solo lugar. Sincroniza con Google Calendar para que nada se te escape.", tag: "Personal" },
+  { icon: Users, title: "Sigue a quien te importa", description: "Suscríbete a los calendarios públicos o privados de amigos, artistas, equipos deportivos o cualquier creador. Sus eventos aparecen directamente en tu vista.", tag: "Social" },
+  { icon: Radar, title: "Radar de eventos", description: "¿Sin planes? Abre el mapa y descubre eventos que están ocurriendo cerca de ti ahora mismo. Encuentra algo nuevo cada día.", tag: "Discovery" },
+  { icon: Globe, title: "Calendarios públicos y privados", description: "Crea calendarios para tus eventos y compártelos con quien quieras. Tú controlas quién puede verlos y suscribirse.", tag: "Control" },
+  { icon: Star, title: "Sistema de favoritos", description: "Guarda los calendarios que más te gustan y accede a ellos rápidamente. Nunca más pierdas de vista los eventos que te interesan.", tag: "Organización" },
+  { icon: Lock, title: "Privacidad primero", description: "Tú decides qué compartir y con quién. Tus datos nunca se venden ni se comparten sin tu consentimiento explícito.", tag: "Seguridad" },
+];
+
 function App() {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState<{
-    type: "success" | "error";
-    text: string;
-  } | null>(null);
-  const cardsRef = useRef<HTMLDivElement[]>([]);
+  const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+  const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeFeature, setActiveFeature] = useState(0);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const cards = cardsRef.current;
-    if (!cards || cards.length === 0) return;
-    function updateCardVisibility() {
-      cards.forEach((el) => {
-        if (!el) return;
-        const rect = el.getBoundingClientRect();
-        const vh = window.innerHeight;
-        if (rect.top < vh * 0.7 && rect.bottom > vh * 0.2) {
-          el.classList.add("opacity-100", "scale-100");
-          el.classList.remove("opacity-0", "scale-95");
-        } else {
-          el.classList.remove("opacity-100", "scale-100");
-          el.classList.add("opacity-0", "scale-95");
+    const handleScroll = () => {
+      document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
+        const rect = (el as HTMLElement).getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.88) {
+          el.classList.add("revealed");
         }
       });
-    }
-    window.addEventListener("scroll", updateCardVisibility);
-    updateCardVisibility();
-    return () => window.removeEventListener("scroll", updateCardVisibility);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveFeature((prev) => (prev + 1) % 3);
+    }, 4000);
+    return () => clearInterval(interval);
   }, []);
 
   const handleJoinWaitlist = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!email || email.trim() === "") {
-      setMessage({ type: "error", text: "⚠️ Por favor, escribe tu email." });
+      setMessage({ type: "error", text: "Por favor, escribe tu email." });
       return;
     }
-
     setIsLoading(true);
     setMessage(null);
-
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const adminEmail = import.meta.env.VITE_EMAILJS_ADMIN_EMAIL;
-
     try {
       await emailjs.send(serviceId, templateId, {
         to_email: adminEmail,
         user_email: email,
         date: new Date().toLocaleDateString("es-ES"),
       });
-
-      setMessage({
-        type: "success",
-        text: `¡Genial! Hemos apuntado ${email} a la lista de espera 🦦`,
-      });
+      setMessage({ type: "success", text: `¡Genial! ${email} apuntado a la lista 🦦` });
       setEmail("");
-
       setTimeout(() => setMessage(null), 5000);
-    } catch (error) {
-      console.error("Error sending email:", error);
-      setMessage({
-        type: "error",
-        text: "Error al enviar. Intenta más tarde.",
-      });
+    } catch {
+      setMessage({ type: "error", text: "Error al enviar. Intenta más tarde." });
     } finally {
       setIsLoading(false);
     }
   };
-  return (
-    <div className="min-h-screen bg-[#FEFBF6] text-[#11423F] w-full overflow-x-hidden font-sans">
-      {}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-[#11423F] shadow-lg flex items-center px-4 md:px-8 py-3 justify-between">
-        <div
-          className="flex items-center gap-2 cursor-pointer"
-          onClick={() => scrollToSection("home")}
-        >
-          <div className="w-10 h-10 bg-[#FEFBF6] rounded-full flex items-center justify-center overflow-hidden relative">
-            <img src={logo} alt="C" className="w-full h-full object-cover" />
-            <span className="text-[#11423F] font-bold text-xl absolute">C</span>
-          </div>
-          <span className="font-bold text-[#FEFBF6] text-xl tracking-tight">
-            current
-          </span>
-        </div>
 
-        <div className="hidden md:flex gap-6 items-center">
-          {navSections.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className="bg-transparent border-none text-[#FEFBF6] hover:text-[#E88D87] font-medium cursor-pointer transition-colors p-2"
-            >
-              {item.label}
+  const yearlyDiscount = (plan: typeof plans[0]) => {
+    if (plan.price.monthly === 0) return null;
+    const monthlyTotal = plan.price.monthly * 12;
+    const saved = monthlyTotal - plan.price.yearly;
+    return Math.round((saved / monthlyTotal) * 100);
+  };
+
+  return (
+    <div className="cc-root">
+      {/* NAV */}
+      <nav className="cc-nav">
+        <div className="cc-nav-inner">
+          <button className="cc-logo-btn" onClick={() => scrollToSection("home")}>
+            <div className="cc-logo-img-wrap">
+              <img src={logo} alt="Current Calendar" className="cc-logo-img" />
+            </div>
+            <span className="cc-logo-text">current</span>
+          </button>
+          <div className="cc-nav-links">
+            {navSections.map((item) => (
+              <button key={item.id} onClick={() => scrollToSection(item.id)} className="cc-nav-link">
+                {item.label}
+              </button>
+            ))}
+            <button onClick={() => scrollToSection("waitlist")} className="cc-nav-cta">
+              Únete a la Beta
             </button>
-          ))}
-          <button className="bg-[#E88D87] text-white px-5 py-2 rounded-full font-bold hover:bg-[#FEFBF6] hover:text-[#E88D87] transition shadow-md border-none cursor-pointer">
-            Próximamente
+          </div>
+          <button className="cc-mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
+        {mobileMenuOpen && (
+          <div className="cc-mobile-menu">
+            {navSections.map((item) => (
+              <button key={item.id} onClick={() => { scrollToSection(item.id); setMobileMenuOpen(false); }} className="cc-mobile-link">
+                {item.label}
+              </button>
+            ))}
+            <button onClick={() => { scrollToSection("waitlist"); setMobileMenuOpen(false); }} className="cc-mobile-cta">
+              Únete a la Beta
+            </button>
+          </div>
+        )}
       </nav>
 
-      {}
-      <section
-        id="home"
-        className="pt-40 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20 bg-[#fdf7ed] rounded-3xl shadow-xl relative overflow-hidden z-10"
-      >
-        <div className="md:w-1/2 text-left space-y-6">
-          <span className="inline-block bg-[#E88D87] text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider shadow-sm">
-            Coming Soon 2026
-          </span>
-          <h1 className="text-6xl md:text-8xl font-extrabold text-[#11423F] leading-[1.1]">
-            Go with <br /> <span className="text-[#11423F]">the flow.</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-lg leading-relaxed">
-            La red social para descubrir eventos y compartir calendarios. Más
-            social que Google Calendar, más organizado que Instagram.
-          </p>
-          <div className="pt-4">
-            <button
-              onClick={() => scrollToSection("waitlist")}
-              className="bg-[#11423F] border-none text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:scale-105 transition cursor-pointer"
-            >
-              Unirme a la Beta
-            </button>
-          </div>
+      {/* HERO */}
+      <section id="home" className="cc-hero" ref={heroRef}>
+        <div className="cc-hero-bg">
+          <div className="cc-hero-blob cc-hero-blob-1" />
+          <div className="cc-hero-blob cc-hero-blob-2" />
         </div>
-        <div className="md:w-1/2 flex justify-center relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#E88D87]/10 rounded-full blur-3xl -z-10"></div>
-          <img
-            src={mockup}
-            alt="Mockup"
-            className="w-80 md:w-[450px] rounded-[3rem] shadow-2xl border-4 border-white rotate-[-2deg]"
-          />
-        </div>
-      </section>
-
-      {}
-      <section id="features" className="py-24 bg-[#FEFBF6]">
-        <div className="flex flex-col gap-12">
-          {stackingCards.map((card, i) => (
-            <div
-              key={i}
-              ref={(el) => {
-                if (el) cardsRef.current[i] = el;
-              }}
-              className="card rounded-[3rem] shadow-2xl transition-all duration-700 opacity-0 scale-95 mx-auto flex items-center justify-center p-12"
-              style={{
-                background: "#11423F",
-                minHeight: "400px",
-                width: "90vw",
-                maxWidth: "1100px",
-              }}
-            >
-              <div className="w-full text-[#FEFBF6]">{card.content}</div>
+        <div className="cc-hero-inner">
+          <div className="cc-hero-content">
+            <div className="cc-hero-badge">
+              <Zap size={13} /> Coming Soon · 2026
             </div>
-          ))}
-        </div>
-      </section>
-
-      {}
-      <section
-        id="waitlist"
-        className="py-24 px-6 bg-[#11423F] text-[#FEFBF6] text-center"
-      >
-        <div className="max-w-2xl mx-auto space-y-8">
-          <h2 className="text-4xl md:text-6xl font-bold">¿Listo para fluir?</h2>
-          <form
-            onSubmit={handleJoinWaitlist}
-            className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-          >
-            <input
-              type="email"
-              placeholder="tu@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-6 py-4 rounded-xl text-black bg-[#FEFBF6] outline-none"
-            />
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="bg-[#E88D87] border-none text-white font-bold px-8 py-4 rounded-xl shadow-lg cursor-pointer hover:brightness-110 transition"
-            >
-              {isLoading ? "Enviando..." : "Enviar"}
-            </button>
-          </form>
-          {message && (
-            <div
-              className={`p-4 rounded-xl font-bold ${message.type === "success" ? "bg-green-500/20 text-green-200" : "bg-red-500/20 text-red-200"}`}
-            >
-              {message.text}
+            <h1 className="cc-hero-title">
+              El calendario<br /><em>social</em> que<br />necesitabas.
+            </h1>
+            <p className="cc-hero-desc">
+              Más social, más organizado.<br />
+              Todo en un solo lugar.<br />
+              Sigue eventos de las personas que te importan.
+            </p>
+            <div className="cc-hero-actions">
+              <button onClick={() => scrollToSection("waitlist")} className="cc-btn-primary">
+                Unirme a la Beta
+              </button>
+              <button onClick={() => scrollToSection("features")} className="cc-btn-ghost">
+                Ver cómo funciona <ChevronDown size={16} />
+              </button>
             </div>
-          )}
-          <div className="mt-6">
-            <a
-              href="https://forms.cloud.microsoft/r/UErS0DvUBR"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#E88D87] text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:bg-[#D97D7D] hover:scale-105 transition-all duration-300"
-            >
-              ¿Tienes alguna sugerencia? Pulsa aquí
+            <div className="cc-hero-stats">
+              <div className="cc-stat">
+                <span className="cc-stat-number">∞</span>
+                <span className="cc-stat-label">Calendarios por seguir</span>
+              </div>
+              <div className="cc-stat-sep" />
+              <div className="cc-stat">
+                <span className="cc-stat-number">🗺️</span>
+                <span className="cc-stat-label">Radar de eventos</span>
+              </div>
+              <div className="cc-stat-sep" />
+              <div className="cc-stat">
+                <span className="cc-stat-number">100%</span>
+                <span className="cc-stat-label">Tuyo</span>
+              </div>
+            </div>
+          </div>
+          <div className="cc-hero-visual">
+            <div className="cc-mockup-stack">
+              <div className={`cc-mockup-card cc-mockup-back ${activeFeature === 2 ? "active" : ""}`}>
+                <img src={mockupMap} alt="Radar de eventos" />
+                <div className="cc-mockup-label"><MapPin size={13} /> Radar</div>
+              </div>
+              <div className={`cc-mockup-card cc-mockup-mid ${activeFeature === 1 ? "active" : ""}`}>
+                <img src={mockupCalendar} alt="Tu calendario" />
+                <div className="cc-mockup-label"><Calendar size={13} /> Calendario</div>
+              </div>
+              <div className={`cc-mockup-card cc-mockup-front ${activeFeature === 0 ? "active" : ""}`}>
+                <img src={mockupFeed} alt="Feed social" />
+                <div className="cc-mockup-label"><Users size={13} /> Feed</div>
+              </div>
+            </div>
+            <div className="cc-mockup-dots">
+              {[0, 1, 2].map((i) => (
+                <button key={i} className={`cc-mockup-dot ${activeFeature === i ? "active" : ""}`} onClick={() => setActiveFeature(i)} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* STRIP */}
+      <div className="cc-strip">
+        <div className="cc-strip-inner">
+          <span>Tu calendario personal</span><span className="cc-strip-dot">◆</span>
+          <span>Calendarios públicos y privados</span><span className="cc-strip-dot">◆</span>
+          <span>Radar de eventos cercanos</span><span className="cc-strip-dot">◆</span>
+          <span>Discovery de planes</span><span className="cc-strip-dot">◆</span>
+          <span>Badge de verificación</span><span className="cc-strip-dot">◆</span>
+          <span>Sin anuncios</span>
+        </div>
+      </div>
+
+      {/* FEATURES */}
+      <section id="features" className="cc-features">
+        <div className="cc-section-inner">
+          <div className="cc-section-header reveal-on-scroll">
+            <div className="cc-eyebrow">Funcionalidades</div>
+            <h2 className="cc-section-title">
+              Todo lo que necesitas<br />para vivir tu agenda social
+            </h2>
+            <p className="cc-section-desc">
+              Current Calendar no es solo un calendario. Es la manera de estar al tanto de todo lo que ocurre en tu entorno.
+            </p>
+          </div>
+          <div className="cc-features-grid">
+            {features.map((feature, i) => (
+              <div key={i} className="cc-feature-card reveal-on-scroll" style={{ animationDelay: `${i * 80}ms` }}>
+                <div className="cc-feature-icon-wrap"><feature.icon size={22} /></div>
+                <div className="cc-feature-tag">{feature.tag}</div>
+                <h3 className="cc-feature-title">{feature.title}</h3>
+                <p className="cc-feature-desc">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SHOWCASE */}
+      <section className="cc-showcase">
+        <div className="cc-section-inner">
+          <div className="cc-showcase-row reveal-on-scroll">
+            <div className="cc-showcase-text">
+              <div className="cc-eyebrow">Feed Social</div>
+              <h2 className="cc-showcase-title">Sigue a quien te importa, vive sus planes</h2>
+              <p className="cc-showcase-desc">
+                Suscríbete a los calendarios de tus amigos, artistas favoritos o equipos. Todos sus eventos aparecen en tu vista principal para que nunca te pierdas nada.
+              </p>
+              <ul className="cc-showcase-list">
+                <li><CheckCircle2 size={16} /> Calendarios públicos y privados</li>
+                <li><CheckCircle2 size={16} /> Notificaciones de nuevos eventos</li>
+                <li><CheckCircle2 size={16} /> Gestión de suscripciones</li>
+              </ul>
+            </div>
+            <div className="cc-showcase-img-wrap">
+              <img src={mockupFeed} alt="Feed de eventos" className="cc-showcase-img" />
+              <div className="cc-showcase-blob" />
+            </div>
+          </div>
+          <div className="cc-showcase-row cc-showcase-row-reverse reveal-on-scroll">
+            <div className="cc-showcase-text">
+              <div className="cc-eyebrow">Radar & Discovery</div>
+              <h2 className="cc-showcase-title">¿Sin planes? Descubre qué pasa cerca</h2>
+              <p className="cc-showcase-desc">
+                Abre el mapa y encuentra eventos que están ocurriendo ahora mismo en tu zona. El radar te muestra lo que hay alrededor, de forma visual e intuitiva.
+              </p>
+              <ul className="cc-showcase-list">
+                <li><CheckCircle2 size={16} /> Vista de mapa interactivo</li>
+                <li><CheckCircle2 size={16} /> Eventos nuevos cada día</li>
+              </ul>
+            </div>
+            <div className="cc-showcase-img-wrap">
+              <img src={mockupMap} alt="Radar de eventos" className="cc-showcase-img" />
+              <div className="cc-showcase-blob cc-showcase-blob-salmon" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="cc-pricing">
+        <div className="cc-section-inner">
+          <div className="cc-section-header reveal-on-scroll">
+            <div className="cc-eyebrow">Planes</div>
+            <h2 className="cc-section-title">
+              Empieza gratis.<br />Crece cuando estés listo.
+            </h2>
+            <p className="cc-section-desc">
+              Sin sorpresas, sin letra pequeña. Elige el plan que se adapte a cómo quieres vivir tu calendario social.
+            </p>
+            <div className="cc-billing-toggle">
+              <button className={`cc-billing-btn ${billing === "monthly" ? "active" : ""}`} onClick={() => setBilling("monthly")}>Mensual</button>
+              <button className={`cc-billing-btn ${billing === "yearly" ? "active" : ""}`} onClick={() => setBilling("yearly")}>
+                Anual <span className="cc-billing-save">Ahorra hasta 23%</span>
+              </button>
+            </div>
+          </div>
+          <div className="cc-pricing-grid">
+            {plans.map((plan, i) => (
+              <div key={plan.name} className={`cc-plan-card reveal-on-scroll ${plan.popular ? "cc-plan-popular" : ""}`} style={{ animationDelay: `${i * 100}ms` }}>
+                {plan.popular && <div className="cc-plan-badge">Más popular</div>}
+                <div className="cc-plan-header">
+                  <div className={`cc-plan-color-dot cc-plan-dot-${plan.color}`} />
+                  <h3 className="cc-plan-name">{plan.name}</h3>
+                </div>
+                <div className="cc-plan-price">
+                  {plan.price.monthly === 0 ? (
+                    <span className="cc-price-amount">Gratis</span>
+                  ) : (
+                    <>
+                      <span className="cc-price-amount">
+                        {billing === "monthly" ? `${plan.price.monthly}€` : `${(plan.price.yearly / 12).toFixed(2)}€`}
+                      </span>
+                      <span className="cc-price-period">/mes</span>
+                      {billing === "yearly" && (
+                        <div className="cc-price-yearly">
+                          {plan.price.yearly}€/año<span className="cc-price-save"> · {yearlyDiscount(plan)}% off</span>
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
+                <p className="cc-plan-desc">{plan.description}</p>
+                <button onClick={() => scrollToSection("waitlist")} className={`cc-plan-cta ${plan.popular ? "cc-plan-cta-primary" : "cc-plan-cta-secondary"}`}>
+                  {plan.cta}
+                </button>
+                <ul className="cc-plan-features">
+                  {plan.features.filter(f => f.text).map((feature, j) => (
+                    <li key={j} className={`cc-plan-feature ${feature.included ? "included" : "excluded"}`}>
+                      {feature.included ? <CheckCircle2 size={15} className="cc-feat-check" /> : <X size={15} className="cc-feat-x" />}
+                      {feature.text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="cc-perks reveal-on-scroll">
+            <div className="cc-perks-title">Incluido en Business:</div>
+            <div className="cc-perks-grid">
+              <div className="cc-perk"><BarChart3 size={20} /><span>Analíticas avanzadas</span></div>
+              <div className="cc-perk"><Megaphone size={20} /><span>Promoción en el buscador</span></div>
+              <div className="cc-perk"><MessageCircle size={20} /><span>Chat para asistentes</span></div>
+              <div className="cc-perk"><BadgeCheck size={20} /><span>Badge Business/Creator</span></div>
+              <div className="cc-perk"><Heart size={20} /><span>Soporte prioritario</span></div>
+              <div className="cc-perk"><Zap size={20} /><span>Acceso anticipado</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WAITLIST */}
+      <section id="waitlist" className="cc-waitlist">
+        <div className="cc-waitlist-inner">
+          <div className="cc-waitlist-blob cc-waitlist-blob-1" />
+          <div className="cc-waitlist-blob cc-waitlist-blob-2" />
+          <div className="cc-waitlist-content reveal-on-scroll">
+            <div className="cc-eyebrow cc-eyebrow-light">Acceso anticipado</div>
+            <h2 className="cc-waitlist-title">¿Listo para fluir?</h2>
+            <p className="cc-waitlist-desc">
+              Apúntate a la lista de espera y sé de los primeros en acceder a Current Calendar cuando lancemos en 2026.
+            </p>
+            <form onSubmit={handleJoinWaitlist} className="cc-waitlist-form">
+              <input type="email" placeholder="tu@email.com" value={email} onChange={(e) => setEmail(e.target.value)} className="cc-waitlist-input" />
+              <button type="submit" disabled={isLoading} className="cc-waitlist-btn">
+                {isLoading ? "Enviando..." : "Unirme"}
+              </button>
+            </form>
+            {message && (
+              <div className={`cc-waitlist-msg ${message.type === "success" ? "success" : "error"}`}>
+                {message.text}
+              </div>
+            )}
+            <a href="https://forms.cloud.microsoft/r/UErS0DvUBR" target="_blank" rel="noopener noreferrer" className="cc-waitlist-suggest">
+              ¿Tienes alguna sugerencia? Cuéntanosla aquí →
             </a>
           </div>
         </div>
       </section>
 
-      {}
-      <footer
-        className="py-8 text-center text-sm text-[#11423F]/60 bg-[#efeae2]"
-        style={{
-          position: "relative",
-          zIndex: 0,
-          width: "100vw",
-          marginLeft: "calc(50% - 50vw)",
-          marginRight: "calc(50% - 50vw)",
-        }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center gap-6 mb-6">
-            <a
-              href="https://www.instagram.com/current.calendar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md"
-            >
-              <Instagram className="w-5 h-5 text-[#efeae2]" />
-            </a>
-            <a
-              href="https://x.com/currentcalendar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md"
-            >
-              <Twitter className="w-5 h-5 text-[#efeae2]" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/currentcalendar/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md"
-            >
-              <Linkedin className="w-5 h-5 text-[#efeae2]" />
-            </a>
-            <a
-              href="https://www.tiktok.com/@current.calendar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d={siTiktok.path} className="w-5 h-5 text-[#efeae2]" />
-              </svg>
-            </a>
-            <a
-              href="https://www.youtube.com/@currentcalendar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-[#11423F] text-[#efeae2] flex items-center justify-center hover:bg-[#E88D87] transition-colors shadow-md"
-            >
-              <Youtube className="w-5 h-5 text-[#efeae2]" />
-            </a>
+      {/* FOOTER */}
+      <footer className="cc-footer">
+        <div className="cc-footer-inner">
+          <div className="cc-footer-top">
+            <div className="cc-footer-brand">
+              <div className="cc-footer-logo-wrap">
+                <img src={logo} alt="Current" className="cc-footer-logo" />
+              </div>
+              <span className="cc-footer-brand-name">current</span>
+              <p className="cc-footer-tagline">El calendario social que necesitabas.</p>
+            </div>
+            <div className="cc-footer-links">
+              <div className="cc-footer-col">
+                <div className="cc-footer-col-title">Navegación</div>
+                {navSections.map((s) => (
+                  <button key={s.id} onClick={() => scrollToSection(s.id)} className="cc-footer-link">{s.label}</button>
+                ))}
+              </div>
+              <div className="cc-footer-col">
+                <div className="cc-footer-col-title">Síguenos</div>
+                <div className="cc-footer-socials">
+                  <a href="https://www.instagram.com/current.calendar" target="_blank" rel="noopener noreferrer" className="cc-social-link"><Instagram size={18} />Instagram</a>
+                  <a href="https://x.com/currentcalendar" target="_blank" rel="noopener noreferrer" className="cc-social-link"><Twitter size={18} />Twitter / X</a>
+                  <a href="https://www.tiktok.com/@current.calendar" target="_blank" rel="noopener noreferrer" className="cc-social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width={18} height={18}><path d={siTiktok.path} /></svg>TikTok
+                  </a>
+                  <a href="https://www.linkedin.com/company/currentcalendar/" target="_blank" rel="noopener noreferrer" className="cc-social-link"><Linkedin size={18} />LinkedIn</a>
+                  <a href="https://www.youtube.com/@currentcalendar" target="_blank" rel="noopener noreferrer" className="cc-social-link"><Youtube size={18} />YouTube</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <p>© 2026 Current App</p>
+          <div className="cc-footer-bottom">
+            <p>© 2026 Current App. Todos los derechos reservados.</p>
+            <div className="cc-footer-legal"><span>Privacidad</span><span>·</span><span>Términos</span></div>
+          </div>
         </div>
       </footer>
     </div>
